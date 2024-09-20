@@ -8,40 +8,29 @@
 import Foundation
 
 class SearchViewModel {
-    
-    let apiKey = "429f49c804ceb7433e9f3c5fe4075c91"
-    
     // Completion handler to send results to the ViewController
     var onCitiesFetched: (([City]) -> Void)?
     var onError: ((String) -> Void)?
     
+    let weatherService: WeatherService
+    
+    init(weatherService: WeatherService = WeatherService()) {
+        self.weatherService = weatherService
+    }
+    
     // Fetch cities based on query
     func searchCities(query: String) {
-        let limit = 5
-        let urlString = "https://api.openweathermap.org/geo/1.0/direct?q=\(query)&limit=\(limit)&appid=\(apiKey)"
-        
-        guard let url = URL(string: urlString) else {
-            onError?("Invalid URL")
-            return
-        }
-        
-        // Fetch data from the API
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            guard let data = data, error == nil else {
-                self?.onError?("Failed to fetch data: \(error?.localizedDescription ?? "Unknown error")")
-                return
-            }
-            do {
-                // Decode JSON response
-                let cities = try JSONDecoder().decode([City].self, from: data)
+        weatherService.searchCities(query: query) { [weak self] result in
+            switch result {
+            case .success(let cities):
                 DispatchQueue.main.async {
                     self?.onCitiesFetched?(cities)
                 }
-            } catch {
+            case .failure(let error):
                 DispatchQueue.main.async {
-                    self?.onError?("Failed to decode data: \(error.localizedDescription)")
+                    self?.onError?("Failed to fetch cities: \(error.localizedDescription)")
                 }
             }
-        }.resume()
+        }
     }
 }

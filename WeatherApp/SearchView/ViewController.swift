@@ -14,13 +14,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let resultsTableView = UITableView()
     
     // ViewModel
-    let viewModel = SearchViewModel()
+    var viewModel: SearchViewModel!
     
     // Data source
     var searchResults = [City]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = SearchViewModel(weatherService: WeatherService())
         
         // Setup UI
         setupUI()

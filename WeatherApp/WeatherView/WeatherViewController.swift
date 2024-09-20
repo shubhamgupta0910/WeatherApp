@@ -8,7 +8,7 @@
 import UIKit
 
 class WeatherViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var viewModel = WeatherViewModel()
+    var viewModel: WeatherViewModel!
     var city: City?
     
     @IBOutlet weak var locationLabel: UILabel!
@@ -21,6 +21,8 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = WeatherViewModel(weatherService: WeatherService())
+        
         bindViewModel()
         tableView.delegate = self
         tableView.dataSource = self
