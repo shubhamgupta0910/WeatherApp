@@ -1,11 +1,13 @@
 # WeatherApp
 
-A simple iOS weather app that allows users to search for cities and view
-
-https://github.com/user-attachments/assets/ddd506a1-6f9a-4aed-88dc-97f93f53619e
-
- weather forecasts using the OpenWeatherMap API. 
+A simple iOS weather app that allows users to search for cities and view weather forecasts using the OpenWeatherMap API. 
 The app is built with the **MVVM** architecture pattern and integrates with the **OpenWeatherMap** API for geocoding and weather forecasting.
+
+
+
+https://github.com/user-attachments/assets/285fa0ed-d41a-4c68-b0fa-24cf283fb526
+
+
 
 ## Features
 
