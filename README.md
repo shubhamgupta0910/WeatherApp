@@ -45,6 +45,6 @@ The project includes unit tests.
 
 **Running Unit Tests**:
     1. Open the project in Xcode.
-    2. Select the Test option from the Product menu or press 
+    2. Select the Test option from the Product menu. 
 
 
