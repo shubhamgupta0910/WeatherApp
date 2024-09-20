@@ -1,6 +1,10 @@
 # WeatherApp
 
-A simple iOS weather app that allows users to search for cities and view weather forecasts using the OpenWeatherMap API. 
+A simple iOS weather app that allows users to search for cities and view
+
+https://github.com/user-attachments/assets/ddd506a1-6f9a-4aed-88dc-97f93f53619e
+
+ weather forecasts using the OpenWeatherMap API. 
 The app is built with the **MVVM** architecture pattern and integrates with the **OpenWeatherMap** API for geocoding and weather forecasting.
 
 ## Features
@@ -40,3 +44,5 @@ The project includes unit tests.
 **Running Unit Tests**:
     1. Open the project in Xcode.
     2. Select the Test option from the Product menu or press 
+
+
