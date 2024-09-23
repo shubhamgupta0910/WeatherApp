@@ -43,7 +43,7 @@ Open a terminal and run the following command to clone the project:
      pod install
 
 3. **Build and Run the Project:**:
-     open WeatherApp.xcodeproj
+     open WeatherApp.xcworkspace
 
 4. **Run the project**
    In Xcode:
